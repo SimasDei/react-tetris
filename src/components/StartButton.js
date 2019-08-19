@@ -1,9 +1,9 @@
 import React from 'react'
 
-const StartButton = () => {
+const StartButton = ({callback}) => {
   return (
     <div>
-      <h3>Start Button Component</h3>
+      <h3>Start Game</h3>
     </div>
   )
 }
