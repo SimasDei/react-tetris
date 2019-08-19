@@ -15,9 +15,9 @@ const Tetris = () => {
       <Stage stage={createStage()} />
       <aside>
       <div>
-        <Display text="Score" />
-        <Display text="Rows" />
-        <Display text="Level" />
+        <Display text={'Score'} />
+        <Display text={'Rows'} />
+        <Display text={'Levels'} />
       </div>
       <StartButton />
       </aside>
