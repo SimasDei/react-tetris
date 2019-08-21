@@ -12,7 +12,7 @@ import StyledTetris, {StyledTetrisWrapper} from './styles/StyledTetris';
 
 const Tetris = () => {
 
-  const [dropTIme, setDropTime] = useState(null);
+  const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
   const [player] = usePlayer();
   const [stage, setStage] = useStage(player);
@@ -55,14 +55,15 @@ const Tetris = () => {
     <StyledTetris>
       <Stage stage={stage} />
       <aside>
-      {gameOver && (
+      {gameOver ? (
         <Display gameOver={gameOver} text={'GameOver'} />
-      )}
-      <div>
+      ) : (
+        <div>
         <Display text={'Score'} />
         <Display text={'Rows'} />
         <Display text={'Levels'} />
       </div>
+      )}
       <StartButton onClick={startGame} />
       </aside>
       </StyledTetris>
