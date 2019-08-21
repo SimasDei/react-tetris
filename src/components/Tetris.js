@@ -14,15 +14,9 @@ const Tetris = () => {
 
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
-  const [player] = usePlayer();
-  const [stage, setStage] = useStage(player);
+  const [player, updatePlayerPos, resetPlayer] = usePlayer();
+  const [stage, setStage] = useStage(player, resetPlayer);
 
-  const updatePlayerPos = () => {
-    return;
-  }
-  const resetPlayer = () => {
-    return;
-  }
 
   const movePlayer = direction => {
     updatePlayerPos({x: direction, y: 0});
@@ -30,9 +24,10 @@ const Tetris = () => {
   const startGame = () => {
     setStage(createStage());
     resetPlayer();
+    setGameOver(false);
   }
   const drop = () => {
-    updatePlayerPos({x: 0, y: 0, collided: false});
+    updatePlayerPos({x: 0, y: 1, collided: false});
   }
   const dropPlayer = () => {
     drop();
